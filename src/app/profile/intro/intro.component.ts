@@ -8,11 +8,13 @@ import { ProfileService } from '../profile.service';
 })
 export class IntroComponent implements OnInit {
   cvUrl: any
+  socialLinks:any;
   constructor(private profileService:ProfileService) { }
 
   ngOnInit() {
-
-    this.cvUrl =  this.profileService.resumeurl
+    this.cvUrl =  this.profileService.resumeurl;
+    this.socialLinks=this.profileService.socialMediaLinks;
   }
+
 
 }

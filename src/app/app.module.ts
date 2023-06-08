@@ -7,28 +7,27 @@ import { ProfileComponent } from './profile/profile.component';
 import { ProfileModule } from './profile/profile.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 const routes: Routes = [
   {
     path: '',
-    component: ProfileComponent
-  }
+    component: ProfileComponent,
+  },
 ];
 
-
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, {
-    initialNavigation: 'enabled'
-}),
+      initialNavigation: 'enabled',
+    }),
     ProfileModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
